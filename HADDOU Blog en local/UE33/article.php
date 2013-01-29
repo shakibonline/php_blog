@@ -7,7 +7,21 @@
 
 	<form action="article.php" method="post" enctype="multiport/form-data">
 <?php
-	
+	// modification
+	$id =(int)var_get('id');
+	$action_label=($id)?'Modifier':'Ajouter';
+	$rech=mysql_real_escape_string(var_get('r'));
+	echo ("<h2>".$action_label." un article</h2>");  
+	If ($id){
+			$resultat = mysql_query("SELECT * FROM article WHERE id='$id'"); 
+			$data = mysql_fetch_array($resultat);
+	}
+
+ 
+
+ 
+
+	If (isset($_POST['post'])){
 	//vérification des valeurs entrées
 		$titre= var_post('titre');
 		$texte= var_post('texte');
@@ -73,12 +87,7 @@ $errors[]=une iupmage svp';
 		exit();
 	}
 }
-//tous les assign
-/*$smarty->assign("action_label",$action_label);
 
-$smarty->assign("id",$id);
-
-$smarty->display("templates/article.phtml");*/
 		?>
 	<div class="clearfix">
 		<label for="titre">Titre</label>
