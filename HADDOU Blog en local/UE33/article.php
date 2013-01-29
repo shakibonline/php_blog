@@ -87,7 +87,12 @@ $errors[]=une iupmage svp';
 		exit();
 	}
 }
+//tous les assign
+/*$smarty->assign("action_label",$action_label);
 
+$smarty->assign("id",$id);
+
+$smarty->display("templates/article.phtml");*/
 		?>
 	<div class="clearfix">
 		<label for="titre">Titre</label>
